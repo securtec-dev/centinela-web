@@ -1,0 +1,20 @@
+{
+  "name": "centinela-web",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "engines": { "node": ">=22.13.0" },
+  "scripts": {
+    "dev": "vite --port 5174",
+    "server": "node --env-file-if-exists=.env server/main.mjs",
+    "build": "vite build",
+    "start": "node --env-file-if-exists=.env server/main.mjs"
+  },
+  "dependencies": {
+    "react": "19.3.1",
+    "react-dom": "19.3.1"
+  },
+  "devDependencies": {
+    "vite": "8.3.7"
+  }
+}
