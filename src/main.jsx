@@ -154,7 +154,7 @@ function Home({language,setLanguage}) {
       <DemoSection language={language}/><LeadForm language={language} plan={plan} setPlan={setPlan}
         preferredBilling={preferredBilling} setPreferredBilling={setPreferredBilling}/>
     </main>
-    <footer><div className="wrap footer"><Brand language={language}/><a href="/admin">{l('Panel privado','Private dashboard')}</a></div></footer>
+    <footer><div className="wrap footer"><Brand language={language}/></div></footer>
   </>;
 }
 
