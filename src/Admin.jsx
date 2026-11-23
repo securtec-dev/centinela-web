@@ -68,7 +68,7 @@ export function Admin({language,setLanguage}) {
   const matches = (leads??[]).filter(row => (filter==='all'||row.status===filter)&&
     [row.company,row.reference,row.contact,row.email].some(value=>value.toLowerCase().includes(query.trim().toLowerCase())));
   return <main className="business">
-    <header className="business-top"><a className="brand" href="/"><img src="/centinela.svg" alt=""/><strong>Centinela ERP</strong></a>
+    <header className="business-top"><a className="brand" href="/"><img src="/centinela-icon.png" alt=""/><strong>Centinela ERP</strong></a>
       <div className="line"><button className="outline" onClick={()=>setLanguage(language==='es'?'en':'es')}>{language==='es'?'English':'Español'}</button>
         {session&&<button className="outline" onClick={async()=>{
           try{await call('admin/session',language,{method:'DELETE'});setSession(null);setLeads(null);setChosen(null);setFilter('all');setQuery('');setError('');}

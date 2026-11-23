@@ -20,7 +20,7 @@ const demos=[
 ];
 
 function Brand({language}) {
-  return <a className="brand" href="#"><img src="/centinela.svg" alt=""/><span><strong>Centinela ERP</strong>
+  return <a className="brand" href="#"><img src="/centinela-icon.png" alt=""/><span><strong>Centinela ERP</strong>
     <small>{t(language,'Seguridad y Planilla','Security & Payroll')}</small></span></a>;
 }
 
