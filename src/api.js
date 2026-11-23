@@ -16,6 +16,7 @@ export const plans = [
   { id:'100', es:'De 100 a 200 personas', en:'100–200 people', monthly:100, annual:1100 },
   { id:'500', es:'De 201 a 500 personas', en:'201–500 people', monthly:450, annual:5100 },
   { id:'1000', es:'De 501 a 1.000 personas', en:'501–1,000 people', monthly:850, annual:10000 },
+  { id:'enterprise', es:'Más de 1.000 personas', en:'More than 1,000 people', quoteOnly:true },
 ];
 
 export const billingOptions = { monthly: ['Mensual', 'Monthly'], annual: ['Anual', 'Annual'] };

@@ -120,7 +120,7 @@ function validateLead(data) {
   };
   if (!lead.company||!lead.contact||!lead.company_type||!Number.isInteger(lead.employees)||lead.employees<1||lead.employees>1_000_000||
       !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(lead.email)||
-      !['','team','100','500','1000'].includes(lead.plan)||!['','monthly','annual'].includes(lead.billing)) {
+      !['','team','100','500','1000','enterprise'].includes(lead.plan)||!['','monthly','annual'].includes(lead.billing)) {
     throw new HttpError(400,'Revisa los datos de contacto, la cantidad de personas y el plan de interés.',
       'Check the contact details, headcount and plan of interest.');
   }

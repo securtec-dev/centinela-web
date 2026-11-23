@@ -140,9 +140,16 @@ function Home({language,setLanguage}) {
         <div className="toggle"><button aria-pressed={billing==='monthly'} onClick={()=>setBilling('monthly')}>{l('Mensual','Monthly')}</button>
           <button aria-pressed={billing==='annual'} onClick={()=>setBilling('annual')}>{l('Anual','Annual')}</button></div>
       </div><div className="plan-grid">
-        {plans.map(row=><article key={row.id}><h3>{l(row.es,row.en)}</h3><p className="price"><span>USD</span> {money.format(row[billing])}</p>
-          <p className="billing-note">{billing==='monthly'?l('Por mes, por adelantado','Per month, billed in advance'):l('Por año, pago completo','Per year, paid in full')}</p>
-          <a className="outline" href="#solicitar" onClick={()=>{setPlan(row.id);setPreferredBilling(billing);}}>{l('Solicitar información','Request information')}</a></article>)}
+        {plans.map(row=><article key={row.id} className={row.quoteOnly?'quote-plan':undefined}>
+          <h3>{l(row.es,row.en)}</h3>
+          {row.quoteOnly?
+            <p className="billing-note">{l('Cuéntanos cómo opera tu empresa para preparar una cotización.','Tell us how your company operates so we can prepare a quote.')}</p>:
+            <><p className="price"><span>USD</span> {money.format(row[billing])}</p>
+              <p className="billing-note">{billing==='monthly'?l('Por mes, por adelantado','Per month, billed in advance'):l('Por año, pago completo','Per year, paid in full')}</p></>}
+          <a className="outline" href="#solicitar" onClick={()=>{setPlan(row.id);setPreferredBilling(row.quoteOnly?'':billing);}}>
+            {row.quoteOnly?l('Solicitar cotización','Request a quote'):l('Solicitar información','Request information')}
+          </a>
+        </article>)}
       </div></div></section>
       <DemoSection language={language}/><LeadForm language={language} plan={plan} setPlan={setPlan}
         preferredBilling={preferredBilling} setPreferredBilling={setPreferredBilling}/>
