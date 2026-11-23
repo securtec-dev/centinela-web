@@ -12,9 +12,9 @@ export async function call(path, language, options = {}) {
 }
 
 export const plans = [
-  { id:'team', es:'Menos de 100 personas', en:'Under 100 people', monthly:70, annual:770 },
-  { id:'100', es:'100 personas', en:'100 people', monthly:100, annual:1100 },
-  { id:'500', es:'De 101 a 500 personas', en:'101–500 people', monthly:450, annual:5100 },
+  { id:'team', es:'De 1 a 99 personas', en:'1–99 people', monthly:70, annual:770 },
+  { id:'100', es:'De 100 a 200 personas', en:'100–200 people', monthly:100, annual:1100 },
+  { id:'500', es:'De 201 a 500 personas', en:'201–500 people', monthly:450, annual:5100 },
   { id:'1000', es:'De 501 a 1.000 personas', en:'501–1,000 people', monthly:850, annual:10000 },
 ];
 
