@@ -33,7 +33,7 @@ function WorkflowVisual({language}) {
     ['▤',l('Planilla','Payroll'),l('Horas revisadas y exportaciones','Reviewed hours and exports')],
   ];
   return <div className="workflow" aria-hidden="true">
-    <div className="workflow-top"><div className="visual-mark">C<span>✦</span></div><div><b>Centinela ERP</b><small>{l('Centro de operación','Operations workspace')}</small></div></div>
+    <div className="workflow-top"><img className="visual-mark" src="/centinela-icon.png" alt=""/><div><b>Centinela ERP</b><small>{l('Centro de operación','Operations workspace')}</small></div></div>
     <div className="workflow-body">
       <div className="workflow-rail"><span></span><span></span><span></span><span></span></div>
       <div className="workflow-cards">{cards.map(([icon,title,subtitle])=><div className="visual-card" key={title}>
